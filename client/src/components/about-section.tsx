@@ -1,9 +1,17 @@
 import { useInView } from "../hooks/use-in-view";
+import { useState, useEffect } from "react";
 
 export default function AboutSection() {
   const [ref1, inView1] = useInView({ threshold: 0.2 });
   const [ref2, inView2] = useInView({ threshold: 0.2 });
   const [ref3, inView3] = useInView({ threshold: 0.2 });
+  const [hasBeenInView1, setHasBeenInView1] = useState(false);
+  const [hasBeenInView2, setHasBeenInView2] = useState(false);
+  const [hasBeenInView3, setHasBeenInView3] = useState(false);
+
+  useEffect(() => { if (inView1) setHasBeenInView1(true); }, [inView1]);
+  useEffect(() => { if (inView2) setHasBeenInView2(true); }, [inView2]);
+  useEffect(() => { if (inView3) setHasBeenInView3(true); }, [inView3]);
 
   return (
     <section id="about" className="py-20 relative z-10">
@@ -27,7 +35,7 @@ export default function AboutSection() {
             {/* Education Items */}
             <div className="space-y-12">
               {/* IIT Roorkee */}
-              <div ref={ref1} className={`flex flex-col md:flex-row items-center justify-between transition-all duration-700 ${inView1 ? 'animate-edu-fadein-1 opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div ref={ref1} className={`flex flex-col md:flex-row items-center justify-between transition-all duration-700 ${hasBeenInView1 ? 'animate-edu-fadein-1 opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="w-full md:w-5/12 text-right md:pr-8 mb-4 md:mb-0">
                   <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-blue-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg relative">
                     <div className="flex items-center justify-end mb-4">
@@ -52,7 +60,7 @@ export default function AboutSection() {
               </div>
               
               {/* D.R. Akhilesh Das Gupta Institute */}
-              <div ref={ref2} className={`flex flex-col md:flex-row items-center justify-between transition-all duration-700 ${inView2 ? 'animate-edu-fadein-2 opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div ref={ref2} className={`flex flex-col md:flex-row items-center justify-between transition-all duration-700 ${hasBeenInView2 ? 'animate-edu-fadein-2 opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="w-full md:w-5/12"></div>
                 <div className="w-full md:w-2/12 flex justify-center items-center mb-4 md:mb-0">
                   <div className="w-4 h-4 bg-green-500 rounded-full border-4 border-black shadow-lg shadow-green-500/50"></div>
@@ -77,7 +85,7 @@ export default function AboutSection() {
               </div>
               
               {/* Birla Vidya Niketan */}
-              <div ref={ref3} className={`flex flex-col md:flex-row items-center justify-between transition-all duration-700 ${inView3 ? 'animate-edu-fadein-3 opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div ref={ref3} className={`flex flex-col md:flex-row items-center justify-between transition-all duration-700 ${hasBeenInView3 ? 'animate-edu-fadein-3 opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="w-full md:w-5/12 text-right md:pr-8 mb-4 md:mb-0">
                   <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-purple-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg relative">
                     <div className="flex items-center justify-end mb-4">
