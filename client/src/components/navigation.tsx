@@ -44,10 +44,6 @@ export default function Navigation() {
                 ))}
               </div>
             </div>
-            <Avatar>
-              <AvatarImage src="/attached_assets/dp.png" alt="Shivay Mehra" />
-              <AvatarFallback>SM</AvatarFallback>
-            </Avatar>
           </div>
           <div className="md:hidden">
             <button
