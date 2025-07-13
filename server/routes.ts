@@ -189,7 +189,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         service: 'gmail',
         auth: {
           user: 'shivaaymehra2@gmail.com',
-          pass: 'ckyc bsyj hfgk qbvk', // Provided app password
+          pass: 'suys kivt nzlp mvvs', // Updated app password
         },
       });
 
