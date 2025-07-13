@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,21 +30,25 @@ export default function Navigation() {
               Hi, I’m Shivay! Welcome.
             </span>
           </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map(item => (
-                <button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="nav-link hover:text-blue-400 px-3 py-2 text-sm font-medium"
-                >
-                  {item.label}
-                </button>
-              ))}
+          <div className="flex items-center gap-4">
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                {navItems.map(item => (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href)}
+                    className="nav-link hover:text-blue-400 px-3 py-2 text-sm font-medium"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
             </div>
+            <Avatar>
+              <AvatarImage src="/attached_assets/dp.png" alt="Shivay Mehra" />
+              <AvatarFallback>SM</AvatarFallback>
+            </Avatar>
           </div>
-          
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
