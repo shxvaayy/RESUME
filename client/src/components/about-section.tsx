@@ -21,9 +21,10 @@ export default function AboutSection() {
             {/* Education Items */}
             <div className="space-y-12">
               {/* IIT Roorkee */}
-              <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-col md:flex-row items-center justify-between transition-all duration-700 opacity-0 translate-y-8 animate-edu-fadein-1">
                 <div className="w-full md:w-5/12 text-right md:pr-8 mb-4 md:mb-0">
-                  <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-blue-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-blue-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg relative">
+                    <span className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full shadow-md">Level 1</span>
                     <div className="flex items-center justify-end mb-4">
                       <img 
                         src="/api/iit-logo.jpeg" 
@@ -46,13 +47,14 @@ export default function AboutSection() {
               </div>
               
               {/* D.R. Akhilesh Das Gupta Institute */}
-              <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-col md:flex-row items-center justify-between transition-all duration-700 opacity-0 translate-y-8 animate-edu-fadein-2">
                 <div className="w-full md:w-5/12"></div>
                 <div className="w-full md:w-2/12 flex justify-center items-center mb-4 md:mb-0">
                   <div className="w-4 h-4 bg-green-500 rounded-full border-4 border-black shadow-lg shadow-green-500/50"></div>
                 </div>
                 <div className="w-full md:w-5/12 md:pl-8">
-                  <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-green-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-green-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg relative">
+                    <span className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full shadow-md">Level 2</span>
                     <div className="flex items-center mb-4">
                       <img 
                         src="/api/adg-logo.png" 
@@ -71,9 +73,10 @@ export default function AboutSection() {
               </div>
               
               {/* Birla Vidya Niketan */}
-              <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-col md:flex-row items-center justify-between transition-all duration-700 opacity-0 translate-y-8 animate-edu-fadein-3">
                 <div className="w-full md:w-5/12 text-right md:pr-8 mb-4 md:mb-0">
-                  <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-purple-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-purple-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg relative">
+                    <span className="absolute top-2 left-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full shadow-md">Level 3</span>
                     <div className="flex items-center justify-end mb-4">
                       <img 
                         src="/api/birla-logo.png" 
