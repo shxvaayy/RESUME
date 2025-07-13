@@ -21,9 +21,7 @@ function App() {
       <TooltipProvider>
         <div className="dark">
           <Toaster />
-          <h1 style={{ fontFamily: 'Orbitron, sans-serif' }} className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 animate-float">
-            SHIVAY MEHRA
-          </h1>
+          {/* Remove the <h1>SHIVAY MEHRA</h1> from the header area */}
           <Router />
         </div>
       </TooltipProvider>

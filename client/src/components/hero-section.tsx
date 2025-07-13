@@ -38,13 +38,17 @@ export default function HeroSection() {
         </div>
         
         {/* Main Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 animate-float" style={{
-          background: 'linear-gradient(90deg, #ffffff 0%, #ffffff 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          letterSpacing: '0.1em'
-        }}>
+        <h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 animate-float"
+          style={{
+            fontFamily: 'Orbitron, sans-serif',
+            background: 'linear-gradient(90deg, #ffffff 0%, #ffffff 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            letterSpacing: '0.1em'
+          }}
+        >
           SHIVAY MEHRA
         </h1>
         
