@@ -3,6 +3,9 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import fs from "fs";
 import path from "path";
+import nodemailer from 'nodemailer';
+import express from 'express';
+const router = express.Router();
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form endpoint
@@ -161,6 +164,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Stock background error:", error);
       res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
+  router.post('/api/notify-visit', async (req, res) => {
+    try {
+      const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+      const timestamp = new Date().toLocaleString();
+
+      // Configure transporter (use your Gmail app password or SMTP credentials)
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'shivaaymehra2@gmail.com',
+          pass: 'YOUR_APP_PASSWORD_HERE', // Use an app password, not your main password
+        },
+      });
+
+      await transporter.sendMail({
+        from: 'shivaaymehra2@gmail.com',
+        to: 'shivaaymehra2@gmail.com',
+        subject: 'New Resume Site Visit',
+        text: `Someone visited your resume site.\nIP: ${ip}\nTime: ${timestamp}`,
+      });
+
+      res.status(200).json({ success: true });
+    } catch (err) {
+      res.status(500).json({ success: false, error: err.message });
     }
   });
 
