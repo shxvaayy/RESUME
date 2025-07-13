@@ -38,7 +38,7 @@ export default function ExperienceSection() {
         
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-[var(--dark-card)] p-8 rounded-xl border border-gray-700 card-hover">
+            <div key={index} className="relative bg-[var(--dark-card)] p-8 rounded-xl border border-gray-700 card-hover">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div className="flex items-center">
                   <div className="mr-4">

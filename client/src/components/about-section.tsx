@@ -21,8 +21,8 @@ export default function AboutSection() {
             {/* Education Items */}
             <div className="space-y-12">
               {/* IIT Roorkee */}
-              <div className="flex items-center justify-between">
-                <div className="w-5/12 text-right pr-8">
+              <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="w-full md:w-5/12 text-right md:pr-8 mb-4 md:mb-0">
                   <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-blue-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="flex items-center justify-end mb-4">
                       <img 
@@ -39,19 +39,19 @@ export default function AboutSection() {
                     <p className="text-sm text-gray-500">Sep 2024 – Sep 2025</p>
                   </div>
                 </div>
-                <div className="w-2/12 flex justify-center">
+                <div className="w-full md:w-2/12 flex justify-center items-center mb-4 md:mb-0">
                   <div className="w-4 h-4 bg-blue-500 rounded-full border-4 border-black shadow-lg shadow-blue-500/50"></div>
                 </div>
-                <div className="w-5/12"></div>
+                <div className="w-full md:w-5/12"></div>
               </div>
               
               {/* D.R. Akhilesh Das Gupta Institute */}
-              <div className="flex items-center justify-between">
-                <div className="w-5/12"></div>
-                <div className="w-2/12 flex justify-center">
+              <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="w-full md:w-5/12"></div>
+                <div className="w-full md:w-2/12 flex justify-center items-center mb-4 md:mb-0">
                   <div className="w-4 h-4 bg-green-500 rounded-full border-4 border-black shadow-lg shadow-green-500/50"></div>
                 </div>
-                <div className="w-5/12 pl-8">
+                <div className="w-full md:w-5/12 md:pl-8">
                   <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-green-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="flex items-center mb-4">
                       <img 
@@ -71,8 +71,8 @@ export default function AboutSection() {
               </div>
               
               {/* Birla Vidya Niketan */}
-              <div className="flex items-center justify-between">
-                <div className="w-5/12 text-right pr-8">
+              <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="w-full md:w-5/12 text-right md:pr-8 mb-4 md:mb-0">
                   <div className="bg-[var(--dark-card)] p-6 rounded-xl border border-purple-500/30 card-hover transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="flex items-center justify-end mb-4">
                       <img 
@@ -89,10 +89,10 @@ export default function AboutSection() {
                     <p className="text-sm text-gray-500">2007 – 2021</p>
                   </div>
                 </div>
-                <div className="w-2/12 flex justify-center">
+                <div className="w-full md:w-2/12 flex justify-center items-center mb-4 md:mb-0">
                   <div className="w-4 h-4 bg-purple-500 rounded-full border-4 border-black shadow-lg shadow-purple-500/50"></div>
                 </div>
-                <div className="w-5/12"></div>
+                <div className="w-full md:w-5/12"></div>
               </div>
             </div>
           </div>

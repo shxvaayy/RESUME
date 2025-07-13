@@ -1,6 +1,15 @@
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactSection() {
+  const [copied, setCopied] = useState(false);
+  const email = "shivaaymehra2@gmail.com";
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   return (
     <section id="contact" className="py-20 relative z-10">
@@ -69,9 +78,14 @@ export default function ContactSection() {
               <a 
                 href="mailto:shivaaymehra2@gmail.com" 
                 className="w-12 h-12 bg-green-600/20 rounded-full flex items-center justify-center hover:bg-green-600/30 transition-colors"
+                onClick={e => { e.preventDefault(); handleCopy(); }}
+                title={copied ? 'Copied!' : 'Copy email'}
               >
                 <Mail className="text-green-400 text-xl" />
               </a>
+              {copied && (
+                <span className="absolute bottom-16 text-green-400 bg-[var(--dark-card)] px-3 py-1 rounded shadow-lg text-sm">Email copied!</span>
+              )}
             </div>
           </div>
         </div>

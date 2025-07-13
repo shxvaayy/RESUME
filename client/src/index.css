@@ -86,7 +86,8 @@
 
   .card-hover:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 24px 4px #3b82f6, 0 20px 40px rgba(59, 130, 246, 0.3);
+    /* Blue glow + existing shadow */
   }
 
   .nav-link {

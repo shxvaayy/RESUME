@@ -43,7 +43,7 @@ export default function ProjectsSection() {
         
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="project-card p-8 rounded-xl backdrop-blur-sm card-hover">
+            <div key={index} className="relative project-card p-8 rounded-xl backdrop-blur-sm card-hover">
               <div className="mb-6">
                 <div 
                   className={`w-full h-48 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center mb-4 relative overflow-hidden`}
