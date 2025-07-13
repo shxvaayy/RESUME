@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import nodemailer from 'nodemailer';
 import express from 'express';
+import fetch from 'node-fetch';
 const router = express.Router();
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -171,21 +172,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
       const timestamp = new Date().toLocaleString();
+      const userAgent = req.headers['user-agent'] || 'Unknown';
+      const referrer = req.headers['referer'] || req.headers['referrer'] || 'Direct/Unknown';
+
+      // Get geo-IP info
+      let geoInfo = {};
+      try {
+        const geoRes = await fetch(`http://ip-api.com/json/${ip}`);
+        geoInfo = await geoRes.json();
+      } catch (e) {
+        geoInfo = { status: 'fail' };
+      }
 
       // Configure transporter (use your Gmail app password or SMTP credentials)
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
           user: 'shivaaymehra2@gmail.com',
-          pass: 'YOUR_APP_PASSWORD_HERE', // Use an app password, not your main password
+          pass: 'ckyc bsyj hfgk qbvk', // Provided app password
         },
       });
+
+      const locationDetails = geoInfo.status === 'success'
+        ? `Location: ${geoInfo.city}, ${geoInfo.regionName}, ${geoInfo.country}\nISP: ${geoInfo.isp}`
+        : 'Location: Not available';
 
       await transporter.sendMail({
         from: 'shivaaymehra2@gmail.com',
         to: 'shivaaymehra2@gmail.com',
         subject: 'New Resume Site Visit',
-        text: `Someone visited your resume site.\nIP: ${ip}\nTime: ${timestamp}`,
+        text: `Someone visited your resume site.\nTime: ${timestamp}\nIP: ${ip}\n${locationDetails}\nBrowser: ${userAgent}\nReferrer: ${referrer}`,
       });
 
       res.status(200).json({ success: true });
