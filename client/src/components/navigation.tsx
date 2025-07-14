@@ -10,6 +10,7 @@ export default function Navigation() {
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
+    { href: "#certifications", label: "Certifications" }, // Added Certifications nav item
     { href: "#contact", label: "Contact" }
   ];
 
