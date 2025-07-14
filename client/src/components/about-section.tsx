@@ -79,6 +79,7 @@ export default function AboutSection() {
                     </div>
                     <h4 className="text-xl font-bold text-green-400 mb-2">D.R. Akhilesh Das Gupta Institute</h4>
                     <p className="text-gray-300 mb-2">Bachelor of Technology in AI & Data Science</p>
+                    <p className="text-sm text-gray-500">2021 – 2025</p>
                     <p className="text-sm text-gray-500">CGPA: 8.0</p>
                   </div>
                 </div>
