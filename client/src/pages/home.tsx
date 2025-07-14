@@ -8,6 +8,7 @@ import ProjectsSection from "@/components/projects-section";
 import SkillsSection from "@/components/skills-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import CertificationsSection from '@/components/certifications-section';
 
 export default function HomePage() {
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
+      <CertificationsSection />
       <ContactSection />
       <Footer />
     </div>
